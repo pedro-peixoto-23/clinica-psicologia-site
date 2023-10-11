@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+      <title>Verificar Agendamento</title>
+      <link rel="stylesheet" href="static/styles.css"/>
+      <link rel="stylesheet" href="static/marcar_consulta.css"/>
+      <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      />
+  
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    </head>
+ 
+   <body>
+     <div class="container_verificar_dados_agendamento">
+      <form method="POST" action="receber_cpf_verificacao">
+        <h1>Verificar os dados do seu agendamento</h1>
+        <br><br><br>
+        <div>
+          <h2>Insira o seu CPF abaixo</h2>
+          <input 
+                type="text" name="cpf" id="cpf" onkeypress="$(this).mask('000.000.000-00');"
+                title="Digite o CPF no formato: xxx.xxx.xxx-xx" autocomplete="off" required 
+          />
+        </div>
+        <br>
+
+        <div>
+          <button class="botao" type="submit">Enviar</button>
+        </div>
+      </form>
+ 
+      <div class="botoes">
+        <a href="marcar_consulta"
+          ><button class="botoes_voltar">Marcar consulta</button></a>
+        <a href="/"
+          ><button class="botoes_voltar">Tela inicial</button></a>
+        <a href="especificacoes"
+          ><button class="botoes_voltar">Especificações</button></a>
+      </div>
+     </div>
+   </body>
+ </html>
+ 

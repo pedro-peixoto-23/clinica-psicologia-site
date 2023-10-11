@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <title>Consulta</title>
+    <link rel="stylesheet" href="static/https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+  </head>
+
+  <body>
+    <div class="container">
+        <div>
+        <h1 id="titulo">Marcar consulta</h1>
+        <p id="subtitulo">Insira todos os dados necessários</p>
+        <br />
+      </div>
+
+      <form method="POST" action="receber_dados_formulario_consulta">
+        <fieldset class="grupo">
+          <div class="campo">
+            <label for="nome"><strong>Nome completo</strong></label>
+            <input
+              type="text" name="nome" id="nome"
+              title="Digite o seu nome completo." autocomplete="off" required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="cpf"><strong>CPF</strong></label>
+            <input
+              type="text" name="cpf" id="cpf" onkeypress="$(this).mask('000.000.000-00');"
+              title="Digite o seu cpf" autocomplete="off" required
+            />
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="email"><strong>Email</strong></label>
+          <input type="email" name="email" id="email" autocomplete="off" required />
+        </div>
+
+        <div class="campo">
+          <label for="calendario"><strong>Escolha a data</strong></label>
+          <input type="text" name="calendario" id="calendario"  placeholder="Selecione" required />
+        </div>
+
+        <div class="campo">
+          <label for="horario"><strong>Horario</strong></label>
+          <select id="horario" name="horario" required>
+            <option selected disabled value="">Selecione</option>
+          </select>
+        </div>
+
+
+
+        <div class="campo">
+          <label for="servico"><strong>Serviço</strong></label>
+          <select id="servico" name="servico" required>
+            <option selected disabled value="">Selecione</option>
+
+            <option value="Terapia Cognitiva Comportamental - Sem pacote (R$150,00)">
+              Terapia Cognitiva Comportamental - Sem pacote (R$150,00)
+            </option>
+            <option value="Terapia Cognitiva Comportamental - Pacote de 7 sessões (R$1000,00)">
+              Terapia Cognitiva Comportamental - Pacote de 7 sessões (R$1000,00)
+            </option>
+            <option value="Terapia Cognitiva Comportamental - Pacote de 12 sessões (R$1700,00)">
+              Terapia Cognitiva Comportamental - Pacote de 12 sessões (R$1700,00)
+            </option>
+
+            <option value="Psicoterapia Infantil - Sem pacote (R$150,00)">
+              Psicoterapia Infantil - Sem pacote (R$150,00)
+            </option>
+            <option value="Psicoterapia Infantil - Pacote de 9 sessões (R$1000,00)">
+              Psicoterapia Infantil - Pacote de 9 sessões (R$1000,00)
+            </option>
+            <option value="Psicoterapia Infantil - Pacote com 12 sessões (R$1700,00)">
+              Psicoterapia Infantil - Pacote com 12 sessões (R$1700,00)
+            </option>
+
+            <option value="Psicoterapia para Adolescentes - Sem pacote (R$150,00)">
+              Psicoterapia para Adolescentes - Sem pacote (R$150,00)
+            </option>
+            <option value="Psicoterapia para Adolescentes - Pacote de 9 sessões (R$1000,00)">
+              Psicoterapia para Adolescentes - Pacote de 9 sessões (R$1000,00)
+            </option>
+            <option value="Psicoterapia para Adolescentes - Pacote com 12 sessões (R$1700,00)">
+              Psicoterapia para Adolescentes - Pacote com 12 sessões (R$1700,00)
+            </option>
+
+            <option value="Psicoterapia para Adultos - Sem pacote (R$150,00)">
+              Psicoterapia para Adultos - Sem pacote (R$150,00)
+            </option>
+            <option value="Psicoterapia para Adultos - Pacote de 9 sessões (R$1000,00)">
+              Psicoterapia para Adultos - Pacote de 9 sessões (R$1000,00)
+            </option>
+            <option value="Psicoterapia para Adultos- Pacote com 12 sessões (R$1700,00)">
+              Psicoterapia para Adultos- Pacote com 12 sessões (R$1700,00)
+            </option>
+
+            <option value="Psicoterapia para Idosos; - Sem pacote (R$150,00)">
+              Psicoterapia para Idosos; - Sem pacote (R$150,00)
+            </option>
+            <option value="Psicoterapia para Idosos; - Pacote de 9 sessões (R$1000,00)">
+              Psicoterapia para Idosos; - Pacote de 9 sessões (R$1000,00)
+            </option>
+            <option value="Psicoterapia para Idosos; - Pacote com 12 sessões (R$1700,00)">
+              Psicoterapia para Idosos; - Pacote com 12 sessões (R$1700,00)
+            </option>
+
+            <option value="Psicoterapia de Casal - Sem pacote (R$150,00)">
+              Psicoterapia de Casal - Sem pacote (R$150,00)
+            </option>
+            <option value="Psicoterapia de Casal - Pacote de 9 sessões (R$1000,00)">
+              Psicoterapia de Casal - Pacote de 9 sessões (R$1000,00)
+            </option>
+            <option value="Psicoterapia de Casal - Pacote com 12 sessões (R$1700,00)">
+              Psicoterapia de Casal - Pacote com 12 sessões (R$1700,00)
+            </option>
+
+            <option value="Reabilitação Neuropsicológica - Sem pacote (R$145,00)">
+              Reabilitação Neuropsicológica - Sem pacote (R$145,00)
+            </option>
+            <option value="Reabilitação Neuropsicológica - Pacote de 9 sessões (R$1000,00)">
+              Reabilitação Neuropsicológica - Pacote de 9 sessões (R$1000,00)
+            </option>
+            <option value="Reabilitação Neuropsicológica - Pacote com 12 sessões (R$1500,00)">
+              Reabilitação Neuropsicológica - Pacote com 12 sessões (R$1500,00)
+            </option>
+          </select>
+        </div>
+
+        <button class="botao" type="submit">Enviar</button>
+      </form>
+
+      <div class="botoes">
+        <a href="especificacoes"
+          ><button class="botoes_voltar">Especificações</button></a>
+        <a href="/"
+          ><button class="botoes_voltar">Tela inicial</button></a>
+        <a href="verificar_dados_agendamento"
+          ><button class="botoes_voltar">Dados de Agendamento</button></a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // recebendo as datas no modo safe
+        var datas = {{ datas_e_horarios|safe }};
+        // criando a lista de datas esgotadas, ou seja, datas que já lotaram os horários
+        var datas_esgotadaas = []
+        // percorrendo a lista de datas
+        for (let i = 0; i < datas.length; i++) {
+            let elemento = datas[i];
+
+            let data = new Date(elemento);
+            let dia = data.getDay();
+
+            if (dia == 5) {
+              if (elemento['horarios_preenchidos'].length === 5) {
+                datas_esgotadaas.push(elemento['data'])
+              }
+            } else {
+              if (elemento['horarios_preenchidos'].length === 10) {
+                datas_esgotadaas.push(elemento['data'])
+              }
+            }
+        }
+
+        // Definindo as listas de horários disponíveis e a lista que será usada para definir os horários disponíveis
+        // para a data selecionada.
+        var horarios_disponiveis_full = ["07:00","08:00","09:00","10:00","11:00","13:00","14:00","15:00","16:00","17:00"]
+        var horarios_disponiveis_especifico = []
+        var data_now = new Date();
+        var dia = data_now.getDate().toString();
+        var mes = (data_now.getMonth() + 1).toString();
+        var ano = data_now.getFullYear().toString();
+        var data_now_formatado = ano.concat('-', mes.concat('-', dia));
+
+        var calendario = flatpickr("#calendario", {
+            dateFormat: "Y-m-d",
+            minDate: data_now_formatado,
+            disable: [
+                // Função que é chamada para cada data do calendário do mês atual
+                // Quando essa função retorna true, ele desabilita o dia na qual ele está
+                function(date) {
+                    // Transformando a data em uma string do tipo "ano/mes/dia"
+                    var data_atual_formatado = date.toISOString().split('T')[0];
+
+                    // Verificando se a data está incluída na lista de datas que devem ser desabilitadas
+                    if (datas_esgotadaas.includes(data_atual_formatado)) {
+                        return true;  // Desabilita a data
+                    }
+
+                    // Verificando se é domingo
+                    if (date.getDay() === 0) {
+                        return true;  // Desabilita a data
+                    }
+
+                    return false;  // Habilita a data
+                }
+            ],
+            onChange: function(selectedDates, dateStr, instance) {
+                var data_selecionada = new Date(dateStr);
+                var dia_selecionado = data_selecionada.getDay();
+                var dataEncontrada = false;
+                // Veriricar no banco se a data selecionada tem algum horário já utilizado
+                // Se não tiver, colocar todos os horários como disponíveis
+                for (var i = 0; i < datas.length; i++) {
+                    var data_elemento = datas[i];
+                    if (data_elemento['data'] == dateStr) {
+                        // zerando a lista, para adicionar
+                        horarios_disponiveis_especifico = []
+                        horarios_disponiveis_especifico = horarios_disponiveis_full.filter(item => !data_elemento['horarios_preenchidos'].includes(item));
+
+                        dataEncontrada = true;
+
+                        break;
+                    }
+                }
+                if (!dataEncontrada) {
+                    horarios_disponiveis_especifico = [];
+                    horarios_disponiveis_especifico = horarios_disponiveis_full;
+                }
+
+                if (dia_selecionado == 5) {
+                    var horarios_serem_eliminados_sabado = ["13:00","14:00","15:00","16:00","17:00"];
+                    horarios_disponiveis_especifico = horarios_disponiveis_especifico.filter(item => !horarios_serem_eliminados_sabado.includes(item));
+                }
+
+                var select = document.getElementById("horario");
+
+                // Zerando os options
+                for (var i = select.options.length - 1; i > 0; i--) {
+                    select.remove(i);
+                }
+                for (var i = 0; i < horarios_disponiveis_especifico.length; i++) {
+                    var novo_option = document.createElement("option");
+                    novo_option.value = horarios_disponiveis_especifico[i];
+                    novo_option.text = horarios_disponiveis_especifico[i];
+                    select.appendChild(novo_option);
+                }
+            }
+        });
+    </script>
+  </body>
+</html>

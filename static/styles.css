@@ -1,0 +1,108 @@
+html * {
+  font-family: 'Roboto' !important;
+  margin: unset;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: unset;
+  background-color: #1B2B4B;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+
+  transition: all 0.4s;
+  cursor: pointer;
+
+  border: none;
+  border-radius: 50px;
+  background: #384AA1;
+
+  color: #FFF;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+button:hover {
+  background: darkblue;
+}
+
+
+#servico {
+  cursor: pointer;
+}
+
+
+h2 {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  width: 50%;
+  background-color: white;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.container_consulta_agendada {
+  width: 50%;
+  background-color: white;
+  height: 30vh;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.container_ja_agendado {
+  width: 70%;
+  background-color: white;
+  height: 70vh;
+  align-items: left;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.container_verificar_dados_agendamento {
+  width: 50%;
+  background-color: white;
+  height: 60vh;
+  align-items: left;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.header {
+  align-items: center;
+}
+
+.info, .botoes {
+  flex-direction: row;
+}
+
+.info {
+  justify-content: space-between;
+}
+
+.botoes a {
+  width: 100%;
+  padding: 5px;
+}

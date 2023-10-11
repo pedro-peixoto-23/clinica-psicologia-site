@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+	<link rel="stylesheet" type="text/css" href="/static/banco-dados/main.css">
+</head>
+<body>
+	
+	<div class="container">
+		<div class="container-login">
+			<div class="wrap-login">
+				<form method="POST" action="verificar_login" class="login-form">
+					<span class="login-form-title">
+						Login
+					</span>
+
+					<div class="wrap-input margin-top-35 margin-bottom-35">
+						<input class="input-form" type="text" name="login" autocomplete="off" required>
+						<span class="focus-input-form" data-placeholder="Usuário"></span>
+					</div>
+
+					<div class="wrap-input margin-bottom-35">
+						<input class="input-form" type="password" name="senha" required>
+						<span class="focus-input-form" data-placeholder="Senha"></span>
+					</div>
+
+					<div class="container-login-form-btn">
+						<button class="login-form-btn">Entrar</button>
+					</div>
+
+				</form>
+			</div>
+			<img src="/static/banco-dados/login.png" width="300" height="300" class="margin-left-50" />
+		</div>
+	</div>
+	
+	<script>
+		let inputs = document.getElementsByClassName('input-form');
+		for (let input of inputs) {
+			input.addEventListener("blur", function() {
+				if(input.value.trim() != ""){
+					input.classList.add("has-val");
+				} else {
+					input.classList.remove("has-val");
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>
