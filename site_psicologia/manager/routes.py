@@ -12,26 +12,23 @@ def funcionarios():
     return render_template("/funcionarios/funcionarios.html", dados=result)
 
 
-@manager.route("/funcionarios/cadastro")
+@manager.route("/funcionarios/cadastro", methods=["GET", "POST"])
 def cadastro_funcionario():
+    if request.method == "POST":
+        login = request.form["login"]
+        senha = request.form["senha"]
+
+        result = nome_usuario_e_senha_em_funcionarios(login, senha)
+
+        if result == None:
+            inserir_funcionario(login, senha)
+            return redirect(url_for('manager.funcionarios'))
+        else:
+            return render_template("/funcionarios/funcionarios.html")
     return render_template("/funcionarios/form-cadastrar-funcionario.html")
 
 
-@manager.route("/funcionarios/cadastro/verificar_dados", methods=["POST"])
-def verificar_dados_cadastro_funcionario():
-    login = request.form["login"]
-    senha = request.form["senha"]
-
-    result = nome_usuario_e_senha_em_funcionarios(login, senha)
-
-    if result == None:
-        inserir_funcionario(login, senha)
-        return redirect(url_for('manager.funcionarios'))
-    else:
-        return render_template("/funcionarios/funcionarios.html")
-
-
 @manager.route("/funcionarios/apagar/<int:id>")
-def apagar_pessoas_permitidas(id):
+def apagar_funcionario(id):
     remover_funcionario(id)
     return redirect(url_for('manager.funcionarios'))
