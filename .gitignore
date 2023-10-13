@@ -120,7 +120,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+site_psicologia/.env
 .venv
 env/
 venv/

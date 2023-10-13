@@ -1,5 +1,5 @@
 from sqlalchemy import text
-from db_connection import engine
+from site_psicologia.database.db_connection import engine
 
 
 def lista_agendamentos():
